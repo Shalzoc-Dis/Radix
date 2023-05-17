@@ -14,8 +14,11 @@
 // ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
+#include "Core.h"
+#include "HolonomicDrivetrain.h"
 
 int main() {
   vexcodeInit();
   printf("%d", vex::thread::hardware_concurrency);  // Find out wether or not to use threads
+  vex::thread driveThread = thread(Radix::HolonomicDrivetrain::driverControl);
 }
