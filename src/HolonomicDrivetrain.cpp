@@ -46,18 +46,18 @@ int HolonomicDrivetrain::driverControl() {
     float vFL, vFR, vBL, vBR;
 
     // Calculate the required velocity of the motors
-    vFL = power * cosine / maxPower + turn;
-    vFR = power * sine   / maxPower - turn;
-    vBL = power * sine   / maxPower + turn;
-    vBR = power * cosine / maxPower - turn;
+    vFL = power * cosine / (maxPower /* + turn*/);
+    vFR = power * sine   / (maxPower /* - turn*/);
+    vBL = power * sine   / (maxPower /* + turn*/);
+    vBR = power * cosine / (maxPower /* - turn*/);
 
     // Normalise the power such that does not exceed the motors' capabilities
     // FIXME - Suspicion that the 11A max for the motors is exceeded anyway. The 100 seems arbitrary
-    if (power + fabs(turn) >= 100) {
-      vFL /= power + turn;
-      vFR /= power + turn;
-      vBL /= power + turn;
-      vBR /= power + turn;
+    if (power/* + fabs(turn)*/ > 100) {
+      vFL /= power /*+ turn*/;
+      vFR /= power /*+ turn*/;
+      vBL /= power /*+ turn*/;
+      vBR /= power /*+ turn*/;
     }
 
     //printf("Angle: %f W1: %f  W2: %f  W3: %f  W4: %f\n", angle, vFL, vFR, vBL, vBR);
@@ -80,7 +80,11 @@ int HolonomicDrivetrain::driverControl() {
       drive_BR.stop();
     }
 
-    printf("FL %f\nFR %f\nBL %f\nBR %f\n", drive_FL.current(pct), drive_FR.current(pct), drive_BL.current(pct), drive_BR.current(pct));
+    printf("FL %f | vFLpct %f\nFR %f | vFRpct %f\nBL %f | vBLpct %f\nBR %f | vBRpct %f\n-----------\n", drive_FL.velocity(pct), vFL, drive_FR.velocity(pct), vFR, drive_BL.velocity(pct), vBL, drive_BR.velocity(pct), vBR);
+    //printf("sine %f\n cosine %f\n------------\n", sine, cosine);
+
+    //wait(HolonomicDrivetrain::updateTick, msec);
+    this_thread::sleep_for(HolonomicDrivetrain::updateTick);
   }
 
   

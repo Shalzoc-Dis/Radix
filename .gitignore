@@ -32,6 +32,6 @@
 *.app
 
 # VEXcode 
-build/
-complie_commands.json
-.DS_Store
+/build/
+/complie_commands.json
+/.DS_Store

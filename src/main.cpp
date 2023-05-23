@@ -24,5 +24,6 @@
 int main() {
   vexcodeInit();
   //printf("%d", vex::thread::hardware_concurrency);  // Find out wether or not to use threads
-  vex::thread driveThread = thread(Radix::HolonomicDrivetrain::driverControl);
+  //Radix::HolonomicDrivetrain::setStopping(vex::brakeType::coast);
+  vex::task driveThread = task(Radix::HolonomicDrivetrain::driverControl);
 }
