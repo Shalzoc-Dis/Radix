@@ -1091,6 +1091,8 @@ Discarded input sections
                 0x0000000000000000        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
  .rodata._ZN3vex6mono30E
                 0x0000000000000000        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+ .rodata._ZN3vex3pctE
+                0x0000000000000000        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
  .rodata._ZN3vex3secE
                 0x0000000000000000        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
  .rodata._ZN3vex3redE
@@ -2581,7 +2583,7 @@ Linker script and memory map
                 0x0000000000000400                _FIQ_STACK_SIZE = DEFINED (_FIQ_STACK_SIZE)?_FIQ_STACK_SIZE:0x400
                 0x0000000000000400                _UNDEF_STACK_SIZE = DEFINED (_UNDEF_STACK_SIZE)?_UNDEF_STACK_SIZE:0x400
 
-.text           0x0000000003800000     0x1cf0
+.text           0x0000000003800000     0x1c80
  *(.vectors)
  *(.boot_data)
  .boot_data     0x0000000003800000       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
@@ -2596,383 +2598,384 @@ Linker script and memory map
  *(.text)
  *(.text.*)
  .text._ZN5Radix19HolonomicDrivetrain13driverControlEv
-                0x0000000003800100      0x330 build/src/HolonomicDrivetrain.o
+                0x0000000003800100      0x2bc build/src/HolonomicDrivetrain.o
                 0x0000000003800100                Radix::HolonomicDrivetrain::driverControl()
- .text.main     0x0000000003800430       0x30 build/src/main.o
-                0x0000000003800430                main
+ .text.main     0x00000000038003bc       0x30 build/src/main.o
+                0x00000000038003bc                main
  .text._Z11vexcodeInitv
-                0x0000000003800460        0x4 build/src/robot-config.o
-                0x0000000003800460                vexcodeInit()
+                0x00000000038003ec        0x4 build/src/robot-config.o
+                0x00000000038003ec                vexcodeInit()
  .text._GLOBAL__sub_I_robot_config.cpp
-                0x0000000003800464      0x14c build/src/robot-config.o
- .text.vexMain  0x00000000038005b0       0xb0 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x00000000038005b0                vexMain
+                0x00000000038003f0      0x14c build/src/robot-config.o
+ .text.vexMain  0x000000000380053c       0xb0 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x000000000380053c                vexMain
  .text.__vex_function_prolog
-                0x0000000003800660       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x0000000003800660                __vex_function_prolog
- .text._init    0x0000000003800678        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x0000000003800678                _init
- .text._fini    0x000000000380067c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x000000000380067c                _fini
+                0x00000000038005ec       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x00000000038005ec                __vex_function_prolog
+ .text._init    0x0000000003800604        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x0000000003800604                _init
+ .text._fini    0x0000000003800608        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x0000000003800608                _fini
  .text.vexStdlibVersionLinked
-                0x0000000003800680        0xc /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_util.c.obj)
-                0x0000000003800680                vexStdlibVersionLinked
+                0x000000000380060c        0xc /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_util.c.obj)
+                0x000000000380060c                vexStdlibVersionLinked
  .text.vexStdlibVersionVerify
-                0x000000000380068c       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_util.c.obj)
-                0x000000000380068c                vexStdlibVersionVerify
+                0x0000000003800618       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_util.c.obj)
+                0x0000000003800618                vexStdlibVersionVerify
  .text.vexPrivateApiEnable
-                0x00000000038006bc       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038006bc                vexPrivateApiEnable
+                0x0000000003800648       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800648                vexPrivateApiEnable
  .text.vexStdlibMismatchError
-                0x00000000038006cc       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038006cc                vexStdlibMismatchError
+                0x0000000003800658       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800658                vexStdlibMismatchError
  .text.vexTaskAdd
-                0x0000000003800708       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800708                vexTaskAdd
+                0x0000000003800694       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800694                vexTaskAdd
  .text.vexTasksRun
-                0x0000000003800718       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800718                vexTasksRun
+                0x00000000038006a4       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038006a4                vexTasksRun
  .text.vexTaskCheckTimeslice
-                0x0000000003800728       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800728                vexTaskCheckTimeslice
+                0x00000000038006b4       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038006b4                vexTaskCheckTimeslice
  .text.vexTaskSleep
-                0x0000000003800738       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800738                vexTaskSleep
+                0x00000000038006c4       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038006c4                vexTaskSleep
  .text.vexTasksDump
-                0x0000000003800748       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800748                vexTasksDump
+                0x00000000038006d4       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038006d4                vexTasksDump
  .text.vexTaskGetTaskIndex
-                0x0000000003800764       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800764                vexTaskGetTaskIndex
+                0x00000000038006f0       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038006f0                vexTaskGetTaskIndex
  .text.vexTaskStopAll
-                0x0000000003800774       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800774                vexTaskStopAll
+                0x0000000003800700       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800700                vexTaskStopAll
  .text.vexTaskCompletionIdSet
-                0x0000000003800784       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800784                vexTaskCompletionIdSet
+                0x0000000003800710       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800710                vexTaskCompletionIdSet
  .text.vexEventAdd
-                0x0000000003800794       0x34 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800794                vexEventAdd
+                0x0000000003800720       0x34 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800720                vexEventAdd
  .text.vexEventUserIndexGet
-                0x00000000038007c8       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038007c8                vexEventUserIndexGet
+                0x0000000003800754       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800754                vexEventUserIndexGet
  .text.vexDebug
-                0x00000000038007e4       0x38 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038007e4                vexDebug
+                0x0000000003800770       0x38 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800770                vexDebug
  .text.vex_sprintf
-                0x000000000380081c       0x40 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x000000000380081c                vex_sprintf
+                0x00000000038007a8       0x40 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038007a8                vex_sprintf
  .text.vexSystemTimeGet
-                0x000000000380085c       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x000000000380085c                vexSystemTimeGet
+                0x00000000038007e8       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038007e8                vexSystemTimeGet
  .text.vexSystemExitRequest
-                0x0000000003800878       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800878                vexSystemExitRequest
+                0x0000000003800804       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800804                vexSystemExitRequest
  .text.vexDeviceGetByIndex
-                0x0000000003800894       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800894                vexDeviceGetByIndex
+                0x0000000003800820       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800820                vexDeviceGetByIndex
  .text.vexControllerGet
-                0x00000000038008b8       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038008b8                vexControllerGet
+                0x0000000003800844       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800844                vexControllerGet
  .text.vexDeviceMotorVelocitySet
-                0x00000000038008e4       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038008e4                vexDeviceMotorVelocitySet
+                0x0000000003800870       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800870                vexDeviceMotorVelocitySet
  .text.vexDeviceMotorActualVelocityGet
-                0x0000000003800910       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800910                vexDeviceMotorActualVelocityGet
+                0x000000000380089c       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x000000000380089c                vexDeviceMotorActualVelocityGet
  .text.vexDeviceMotorReverseFlagSet
-                0x0000000003800934       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800934                vexDeviceMotorReverseFlagSet
+                0x00000000038008c0       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038008c0                vexDeviceMotorReverseFlagSet
  .text.vexDeviceMotorBrakeModeSet
-                0x0000000003800960       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800960                vexDeviceMotorBrakeModeSet
+                0x00000000038008ec       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038008ec                vexDeviceMotorBrakeModeSet
  .text.vexDeviceMotorPositionSet
-                0x000000000380098c       0x34 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x000000000380098c                vexDeviceMotorPositionSet
+                0x0000000003800918       0x34 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800918                vexDeviceMotorPositionSet
  .text.vexDeviceMotorGearingSet
-                0x00000000038009c0       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038009c0                vexDeviceMotorGearingSet
+                0x000000000380094c       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x000000000380094c                vexDeviceMotorGearingSet
  .text.vexDeviceMotorGearingGet
-                0x00000000038009ec       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x00000000038009ec                vexDeviceMotorGearingGet
+                0x0000000003800978       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800978                vexDeviceMotorGearingGet
  .text.vexDisplayForegroundColor
-                0x0000000003800a10       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800a10                vexDisplayForegroundColor
+                0x000000000380099c       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x000000000380099c                vexDisplayForegroundColor
  .text.vexDisplayBackgroundColor
-                0x0000000003800a34       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800a34                vexDisplayBackgroundColor
+                0x00000000038009c0       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038009c0                vexDisplayBackgroundColor
  .text.vexDisplayTextReference
-                0x0000000003800a58       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800a58                vexDisplayTextReference
+                0x00000000038009e4       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038009e4                vexDisplayTextReference
  .text.vexDisplayTextSize
-                0x0000000003800a7c       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800a7c                vexDisplayTextSize
+                0x0000000003800a08       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800a08                vexDisplayTextSize
  .text.vexDisplayFontNamedSet
-                0x0000000003800aa8       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800aa8                vexDisplayFontNamedSet
+                0x0000000003800a34       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800a34                vexDisplayFontNamedSet
  .text.vexSystemStdlibImpureDataAddr
-                0x0000000003800acc       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800acc                vexSystemStdlibImpureDataAddr
+                0x0000000003800a58       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800a58                vexSystemStdlibImpureDataAddr
  .text.vexSystemStdlibImpureDataSize
-                0x0000000003800af4       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800af4                vexSystemStdlibImpureDataSize
+                0x0000000003800a80       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800a80                vexSystemStdlibImpureDataSize
  .text.vexSystemSaveUserData
-                0x0000000003800b1c       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800b1c                vexSystemSaveUserData
+                0x0000000003800aa8       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800aa8                vexSystemSaveUserData
  .text.vexDisplayThemeIdGet
-                0x0000000003800b58       0x38 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800b58                vexDisplayThemeIdGet
+                0x0000000003800ae4       0x38 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800ae4                vexDisplayThemeIdGet
  .text.vexDeviceEventMaskSet
-                0x0000000003800b90       0x48 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800b90                vexDeviceEventMaskSet
+                0x0000000003800b1c       0x48 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800b1c                vexDeviceEventMaskSet
  .text.vexDeviceEventMaskGet
-                0x0000000003800bd8       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
-                0x0000000003800bd8                vexDeviceEventMaskGet
+                0x0000000003800b64       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x0000000003800b64                vexDeviceEventMaskGet
  .text.vexSystemVersion
-                0x0000000003800c14       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiversions.c.obj)
-                0x0000000003800c14                vexSystemVersion
+                0x0000000003800ba0       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiversions.c.obj)
+                0x0000000003800ba0                vexSystemVersion
  .text.vexStdlibVersion
-                0x0000000003800c24       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiversions.c.obj)
-                0x0000000003800c24                vexStdlibVersion
+                0x0000000003800bb0       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiversions.c.obj)
+                0x0000000003800bb0                vexStdlibVersion
  .text._ZN3vex5motorD2Ev
-                0x0000000003800c34       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800c34                vex::motor::~motor()
-                0x0000000003800c34                vex::motor::~motor()
+                0x0000000003800bc0       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800bc0                vex::motor::~motor()
+                0x0000000003800bc0                vex::motor::~motor()
  .text._ZN3vex5motorD0Ev
-                0x0000000003800c54       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800c54                vex::motor::~motor()
+                0x0000000003800be0       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800be0                vex::motor::~motor()
  .text._ZN3vex5motor9installedEv
-                0x0000000003800c70       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800c70                vex::motor::installed()
+                0x0000000003800bfc       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800bfc                vex::motor::installed()
  .text._ZN3vex5motor15defaultStoppingENS_9brakeTypeE
-                0x0000000003800c88       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800c88                vex::motor::defaultStopping(vex::brakeType)
+                0x0000000003800c14       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800c14                vex::motor::defaultStopping(vex::brakeType)
  .text._ZN3vex5motorC2El
-                0x0000000003800cb8       0x78 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800cb8                vex::motor::motor(long)
-                0x0000000003800cb8                vex::motor::motor(long)
+                0x0000000003800c44       0x78 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800c44                vex::motor::motor(long)
+                0x0000000003800c44                vex::motor::motor(long)
  .text._ZN3vex5motorC2ElNS_11gearSettingEb
-                0x0000000003800d30       0x34 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800d30                vex::motor::motor(long, vex::gearSetting, bool)
-                0x0000000003800d30                vex::motor::motor(long, vex::gearSetting, bool)
+                0x0000000003800cbc       0x34 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800cbc                vex::motor::motor(long, vex::gearSetting, bool)
+                0x0000000003800cbc                vex::motor::motor(long, vex::gearSetting, bool)
  .text._ZN3vex5motor4stopENS_9brakeTypeE
-                0x0000000003800d64       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800d64                vex::motor::stop(vex::brakeType)
+                0x0000000003800cf0       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800cf0                vex::motor::stop(vex::brakeType)
  .text._ZN3vex5motor4stopEv
-                0x0000000003800d94        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800d94                vex::motor::stop()
+                0x0000000003800d20        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800d20                vex::motor::stop()
  .text._ZN3vex5motor16velocityToScaledEdNS_13velocityUnitsE
-                0x0000000003800d9c       0x5c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800d9c                vex::motor::velocityToScaled(double, vex::velocityUnits)
+                0x0000000003800d28       0x5c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800d28                vex::motor::velocityToScaled(double, vex::velocityUnits)
  .text._ZN3vex5motor8velocityENS_13velocityUnitsE
-                0x0000000003800df8       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800df8                vex::motor::velocity(vex::velocityUnits)
+                0x0000000003800d84       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800d84                vex::motor::velocity(vex::velocityUnits)
  .text._ZN3vex5motor5valueEv
-                0x0000000003800e28       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800e28                vex::motor::value()
+                0x0000000003800db4       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800db4                vex::motor::value()
  .text._ZN3vex5motor16scaledToVelocityEdNS_13velocityUnitsE
-                0x0000000003800e44       0xa4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800e44                vex::motor::scaledToVelocity(double, vex::velocityUnits)
+                0x0000000003800dd0       0xa4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800dd0                vex::motor::scaledToVelocity(double, vex::velocityUnits)
  .text._ZN3vex5motor4spinENS_13directionTypeEdNS_13velocityUnitsE
-                0x0000000003800ee8       0x5c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800ee8                vex::motor::spin(vex::directionType, double, vex::velocityUnits)
+                0x0000000003800e74       0x5c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800e74                vex::motor::spin(vex::directionType, double, vex::velocityUnits)
  .text._ZN3vex5motor4spinENS_13directionTypeE
-                0x0000000003800f44       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800f44                vex::motor::spin(vex::directionType)
+                0x0000000003800ed0       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800ed0                vex::motor::spin(vex::directionType)
  .text._ZN3vex5motor11setVelocityEdNS_13velocityUnitsE
-                0x0000000003800f6c       0x54 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003800f6c                vex::motor::setVelocity(double, vex::velocityUnits)
+                0x0000000003800ef8       0x54 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003800ef8                vex::motor::setVelocity(double, vex::velocityUnits)
  .text._ZN3vex10controllerD2Ev
-                0x0000000003800fc0        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x0000000003800fc0                vex::controller::~controller()
-                0x0000000003800fc0                vex::controller::~controller()
+                0x0000000003800f4c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003800f4c                vex::controller::~controller()
+                0x0000000003800f4c                vex::controller::~controller()
  .text._ZN3vex10controller5valueE19_V5_ControllerIndex
-                0x0000000003800fc4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x0000000003800fc4                vex::controller::value(_V5_ControllerIndex)
+                0x0000000003800f50        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003800f50                vex::controller::value(_V5_ControllerIndex)
  .text._ZNK3vex10controller6button21_buttonToPressedEventEv
-                0x0000000003800fcc       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x0000000003800fcc                vex::controller::button::_buttonToPressedEvent() const
+                0x0000000003800f58       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003800f58                vex::controller::button::_buttonToPressedEvent() const
  .text._ZNK3vex10controller6button22_buttonToReleasedEventEv
-                0x0000000003800fec       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x0000000003800fec                vex::controller::button::_buttonToReleasedEvent() const
+                0x0000000003800f78       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003800f78                vex::controller::button::_buttonToReleasedEvent() const
  .text._ZN3vex10controller6buttonC2ENS0_11tButtonTypeEPS0_
-                0x000000000380100c       0x48 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x000000000380100c                vex::controller::button::button(vex::controller::tButtonType, vex::controller*)
-                0x000000000380100c                vex::controller::button::button(vex::controller::tButtonType, vex::controller*)
+                0x0000000003800f98       0x48 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003800f98                vex::controller::button::button(vex::controller::tButtonType, vex::controller*)
+                0x0000000003800f98                vex::controller::button::button(vex::controller::tButtonType, vex::controller*)
  .text._ZNK3vex10controller4axis5valueEv
-                0x0000000003801054       0x58 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x0000000003801054                vex::controller::axis::value() const
+                0x0000000003800fe0       0x58 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003800fe0                vex::controller::axis::value() const
  .text._ZNK3vex10controller4axis8positionENS_12percentUnitsE
-                0x00000000038010ac       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x00000000038010ac                vex::controller::axis::position(vex::percentUnits) const
+                0x0000000003801038       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003801038                vex::controller::axis::position(vex::percentUnits) const
  .text._ZNK3vex10controller4axis23_joystickToChangedEventEv
-                0x00000000038010c8       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x00000000038010c8                vex::controller::axis::_joystickToChangedEvent() const
+                0x0000000003801054       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003801054                vex::controller::axis::_joystickToChangedEvent() const
  .text._ZN3vex10controller4axisC2ENS0_9tAxisTypeEPS0_
-                0x00000000038010e8       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x00000000038010e8                vex::controller::axis::axis(vex::controller::tAxisType, vex::controller*)
-                0x00000000038010e8                vex::controller::axis::axis(vex::controller::tAxisType, vex::controller*)
+                0x0000000003801074       0x2c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003801074                vex::controller::axis::axis(vex::controller::tAxisType, vex::controller*)
+                0x0000000003801074                vex::controller::axis::axis(vex::controller::tAxisType, vex::controller*)
  .text._ZN3vex10controllerC2ENS_14controllerTypeE
-                0x0000000003801114      0x16c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
-                0x0000000003801114                vex::controller::controller(vex::controllerType)
-                0x0000000003801114                vex::controller::controller(vex::controllerType)
+                0x00000000038010a0      0x16c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x00000000038010a0                vex::controller::controller(vex::controllerType)
+                0x00000000038010a0                vex::controller::controller(vex::controllerType)
  .text._ZN3vex4taskC2EPFivE
-                0x0000000003801280       0x5c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
-                0x0000000003801280                vex::task::task(int (*)())
-                0x0000000003801280                vex::task::task(int (*)())
+                0x000000000380120c       0x5c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
+                0x000000000380120c                vex::task::task(int (*)())
+                0x000000000380120c                vex::task::task(int (*)())
  .text._ZN3vex4taskD2Ev
-                0x00000000038012dc        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
-                0x00000000038012dc                vex::task::~task()
-                0x00000000038012dc                vex::task::~task()
+                0x0000000003801268        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
+                0x0000000003801268                vex::task::~task()
+                0x0000000003801268                vex::task::~task()
  .text._ZN3vex11this_thread9sleep_forEm
-                0x00000000038012e0        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_thread.cpp.obj)
-                0x00000000038012e0                vex::this_thread::sleep_for(unsigned long)
+                0x000000000380126c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_thread.cpp.obj)
+                0x000000000380126c                vex::this_thread::sleep_for(unsigned long)
  .text._ZN3vex5event4initEmmPFvvE
-                0x00000000038012e4        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_event.cpp.obj)
-                0x00000000038012e4                vex::event::init(unsigned long, unsigned long, void (*)())
+                0x0000000003801270        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_event.cpp.obj)
+                0x0000000003801270                vex::event::init(unsigned long, unsigned long, void (*)())
  .text._ZN3vex5event9userindexEv
-                0x00000000038012e8        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_event.cpp.obj)
-                0x00000000038012e8                vex::event::userindex()
+                0x0000000003801274        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_event.cpp.obj)
+                0x0000000003801274                vex::event::userindex()
  .text._ZZN3vex6meventC4EmmENUlvE_4_FUNEv
-                0x00000000038012ec        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_mevent.cpp.obj)
+                0x0000000003801278        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_mevent.cpp.obj)
  .text._ZN3vex6meventC2Emm
-                0x00000000038012f0       0x70 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_mevent.cpp.obj)
-                0x00000000038012f0                vex::mevent::mevent(unsigned long, unsigned long)
-                0x00000000038012f0                vex::mevent::mevent(unsigned long, unsigned long)
+                0x000000000380127c       0x70 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_mevent.cpp.obj)
+                0x000000000380127c                vex::mevent::mevent(unsigned long, unsigned long)
+                0x000000000380127c                vex::mevent::mevent(unsigned long, unsigned long)
  .text._ZN3vex5brain9_getIndexEv
-                0x0000000003801360       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
-                0x0000000003801360                vex::brain::_getIndex()
+                0x00000000038012ec       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x00000000038012ec                vex::brain::_getIndex()
  .text._ZN3vex5brain3lcd9setCursorEll
-                0x0000000003801370       0x44 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
-                0x0000000003801370                vex::brain::lcd::setCursor(long, long)
+                0x00000000038012fc       0x44 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x00000000038012fc                vex::brain::lcd::setCursor(long, long)
  .text._ZN3vex5brain3lcd7setFontENS_8fontTypeE
-                0x00000000038013b4      0x23c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
-                0x00000000038013b4                vex::brain::lcd::setFont(vex::fontType)
+                0x0000000003801340      0x23c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x0000000003801340                vex::brain::lcd::setFont(vex::fontType)
  .text._ZN3vex5brain3lcdC2Ev
-                0x00000000038015f0       0x94 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
-                0x00000000038015f0                vex::brain::lcd::lcd()
-                0x00000000038015f0                vex::brain::lcd::lcd()
+                0x000000000380157c       0x94 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x000000000380157c                vex::brain::lcd::lcd()
+                0x000000000380157c                vex::brain::lcd::lcd()
  .text._ZN3vex5brainC2Ev
-                0x0000000003801684       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
-                0x0000000003801684                vex::brain::brain()
-                0x0000000003801684                vex::brain::brain()
+                0x0000000003801610       0x3c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x0000000003801610                vex::brain::brain()
+                0x0000000003801610                vex::brain::brain()
  .text._ZN3vex5brainD2Ev
-                0x00000000038016c0       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
-                0x00000000038016c0                vex::brain::~brain()
-                0x00000000038016c0                vex::brain::~brain()
+                0x000000000380164c       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x000000000380164c                vex::brain::~brain()
+                0x000000000380164c                vex::brain::~brain()
  .text._ZN3vex7triportD2Ev
-                0x00000000038016e0       0x38 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
-                0x00000000038016e0                vex::triport::~triport()
-                0x00000000038016e0                vex::triport::~triport()
+                0x000000000380166c       0x38 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x000000000380166c                vex::triport::~triport()
+                0x000000000380166c                vex::triport::~triport()
  .text._ZN3vex7triportD0Ev
-                0x0000000003801718       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
-                0x0000000003801718                vex::triport::~triport()
+                0x00000000038016a4       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x00000000038016a4                vex::triport::~triport()
  .text._ZN3vex7triport9installedEv
-                0x0000000003801734       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
-                0x0000000003801734                vex::triport::installed()
+                0x00000000038016c0       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x00000000038016c0                vex::triport::installed()
  .text._ZN3vex7triport4portC2ElPS0_
-                0x000000000380174c       0x74 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
-                0x000000000380174c                vex::triport::port::port(long, vex::triport*)
-                0x000000000380174c                vex::triport::port::port(long, vex::triport*)
+                0x00000000038016d8       0x74 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x00000000038016d8                vex::triport::port::port(long, vex::triport*)
+                0x00000000038016d8                vex::triport::port::port(long, vex::triport*)
  .text._ZN3vex7triportC2El
-                0x00000000038017c0       0xf0 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
-                0x00000000038017c0                vex::triport::triport(long)
-                0x00000000038017c0                vex::triport::triport(long)
+                0x000000000380174c       0xf0 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x000000000380174c                vex::triport::triport(long)
+                0x000000000380174c                vex::triport::triport(long)
  .text._ZN3vex5colorD2Ev
-                0x00000000038018b0        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038018b0                vex::color::~color()
-                0x00000000038018b0                vex::color::~color()
+                0x000000000380183c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x000000000380183c                vex::color::~color()
+                0x000000000380183c                vex::color::~color()
  .text.startup._GLOBAL__sub_I__ZN3vex5color5blackE
-                0x00000000038018b4      0x164 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x0000000003801840      0x164 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
  .text._ZN3vex5timerD2Ev
-                0x0000000003801a18        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
-                0x0000000003801a18                vex::timer::~timer()
-                0x0000000003801a18                vex::timer::~timer()
+                0x00000000038019a4        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
+                0x00000000038019a4                vex::timer::~timer()
+                0x00000000038019a4                vex::timer::~timer()
  .text._ZN3vex5timer5clearEv
-                0x0000000003801a1c       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
-                0x0000000003801a1c                vex::timer::clear()
+                0x00000000038019a8       0x1c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
+                0x00000000038019a8                vex::timer::clear()
  .text._ZN3vex5timerC2Ev
-                0x0000000003801a38       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
-                0x0000000003801a38                vex::timer::timer()
-                0x0000000003801a38                vex::timer::timer()
+                0x00000000038019c4       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
+                0x00000000038019c4                vex::timer::timer()
+                0x00000000038019c4                vex::timer::timer()
  .text.vexMotorVelocitySet
-                0x0000000003801a4c       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801a4c                vexMotorVelocitySet
+                0x00000000038019d8       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x00000000038019d8                vexMotorVelocitySet
  .text.vexMotorActualVelocityGet
-                0x0000000003801a6c       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801a6c                vexMotorActualVelocityGet
+                0x00000000038019f8       0x24 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x00000000038019f8                vexMotorActualVelocityGet
  .text.vexMotorReverseFlagSet
-                0x0000000003801a90       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801a90                vexMotorReverseFlagSet
+                0x0000000003801a1c       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801a1c                vexMotorReverseFlagSet
  .text.vexMotorBrakeModeSet
-                0x0000000003801ab0       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801ab0                vexMotorBrakeModeSet
+                0x0000000003801a3c       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801a3c                vexMotorBrakeModeSet
  .text.vexMotorPositionSet
-                0x0000000003801ad0       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801ad0                vexMotorPositionSet
+                0x0000000003801a5c       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801a5c                vexMotorPositionSet
  .text.vexMotorGearingSet
-                0x0000000003801af8       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801af8                vexMotorGearingSet
+                0x0000000003801a84       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801a84                vexMotorGearingSet
  .text.vexMotorGearingGet
-                0x0000000003801b18       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801b18                vexMotorGearingGet
+                0x0000000003801aa4       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801aa4                vexMotorGearingGet
  .text.vexEventMaskSet
-                0x0000000003801b30       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801b30                vexEventMaskSet
+                0x0000000003801abc       0x28 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801abc                vexEventMaskSet
  .text.vexEventMaskGet
-                0x0000000003801b58       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
-                0x0000000003801b58                vexEventMaskGet
+                0x0000000003801ae4       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003801ae4                vexEventMaskGet
  .text._ZN3vex6deviceD2Ev
-                0x0000000003801b70        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801b70                vex::device::~device()
-                0x0000000003801b70                vex::device::~device()
+                0x0000000003801afc        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801afc                vex::device::~device()
+                0x0000000003801afc                vex::device::~device()
  .text._ZN3vex6device5valueEv
-                0x0000000003801b74        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801b74                vex::device::value()
+                0x0000000003801b00        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801b00                vex::device::value()
  .text._ZN3vex6deviceD0Ev
-                0x0000000003801b7c       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801b7c                vex::device::~device()
+                0x0000000003801b08       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801b08                vex::device::~device()
  .text._ZN3vex6device4initEl
-                0x0000000003801b90       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801b90                vex::device::init(long)
+                0x0000000003801b1c       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801b1c                vex::device::init(long)
  .text._ZN3vex6deviceC2El
-                0x0000000003801bc0       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801bc0                vex::device::device(long)
-                0x0000000003801bc0                vex::device::device(long)
+                0x0000000003801b4c       0x20 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801b4c                vex::device::device(long)
+                0x0000000003801b4c                vex::device::device(long)
  .text._ZN3vex6device4typeEv
-                0x0000000003801be0       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801be0                vex::device::type()
+                0x0000000003801b6c       0x10 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801b6c                vex::device::type()
  .text._ZN3vex6device9installedEv
-                0x0000000003801bf0       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801bf0                vex::device::installed()
+                0x0000000003801b7c       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801b7c                vex::device::installed()
  .text.__libc_fini_array
-                0x0000000003801c04       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-fini.o)
-                0x0000000003801c04                __libc_fini_array
+                0x0000000003801b90       0x30 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-fini.o)
+                0x0000000003801b90                __libc_fini_array
  .text.__libc_init_array
-                0x0000000003801c34       0x58 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-init.o)
-                0x0000000003801c34                __libc_init_array
- .text.fmax     0x0000000003801c8c       0x4c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libm.a(lib_a-s_fmax.o)
-                0x0000000003801c8c                fmax
+                0x0000000003801bc0       0x58 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-init.o)
+                0x0000000003801bc0                __libc_init_array
+ .text.fmax     0x0000000003801c18       0x4c /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libm.a(lib_a-s_fmax.o)
+                0x0000000003801c18                fmax
+ *fill*         0x0000000003801c64        0x4 
  .text.fmax.__stub
-                0x0000000003801cd8       0x18 linker stubs
+                0x0000000003801c68       0x18 linker stubs
  *(.gnu.linkonce.t.*)
  *(.plt)
  *(.gnu_warning)
  *(.gcc_except_table)
  *(.glue_7)
- .glue_7        0x0000000003801cf0        0x0 linker stubs
+ .glue_7        0x0000000003801c80        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000003801cf0        0x0 linker stubs
+ .glue_7t       0x0000000003801c80        0x0 linker stubs
  *(.vfp11_veneer)
- .vfp11_veneer  0x0000000003801cf0        0x0 linker stubs
+ .vfp11_veneer  0x0000000003801c80        0x0 linker stubs
  *(.ARM.extab)
  *(.gnu.linkonce.armextab.*)
 
-.v4_bx          0x0000000003801cf0        0x0
- .v4_bx         0x0000000003801cf0        0x0 linker stubs
+.v4_bx          0x0000000003801c80        0x0
+ .v4_bx         0x0000000003801c80        0x0 linker stubs
 
-.iplt           0x0000000003801cf0        0x0
- .iplt          0x0000000003801cf0        0x0 build/src/HolonomicDrivetrain.o
+.iplt           0x0000000003801c80        0x0
+ .iplt          0x0000000003801c80        0x0 build/src/HolonomicDrivetrain.o
 
 .init
  *(.init)
@@ -2980,157 +2983,152 @@ Linker script and memory map
 .fini
  *(.fini)
 
-.rodata         0x0000000003801cf0      0x15c
-                0x0000000003801cf0                __rodata_start = .
+.rodata         0x0000000003801c80      0x104
+                0x0000000003801c80                __rodata_start = .
  *(.rodata)
  *(.rodata.*)
  .rodata.str1.1
-                0x0000000003801cf0       0x55 build/src/HolonomicDrivetrain.o
- .rodata.str1.1
-                0x0000000003801d45       0x2e /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
- *fill*         0x0000000003801d73        0x1 
+                0x0000000003801c80       0x2e /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+ *fill*         0x0000000003801cae        0x2 
  .rodata._ZN3vex5PORT1E
-                0x0000000003801d74        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d74                vex::PORT1
+                0x0000000003801cb0        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cb0                vex::PORT1
  .rodata._ZN3vex6PORT10E
-                0x0000000003801d78        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d78                vex::PORT10
+                0x0000000003801cb4        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cb4                vex::PORT10
  .rodata._ZN3vex7forwardE
-                0x0000000003801d7c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d7c                vex::forward
- .rodata._ZN3vex3pctE
-                0x0000000003801d80        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d80                vex::pct
+                0x0000000003801cb8        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cb8                vex::forward
  .rodata._ZN3vex6PORT11E
-                0x0000000003801d84        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d84                vex::PORT11
+                0x0000000003801cbc        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cbc                vex::PORT11
  .rodata._ZN3vex7primaryE
-                0x0000000003801d88        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d88                vex::primary
+                0x0000000003801cc0        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cc0                vex::primary
  .rodata._ZN3vex7percentE
-                0x0000000003801d8c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d8c                vex::percent
+                0x0000000003801cc4        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cc4                vex::percent
  .rodata._ZN3vex6PORT19E
-                0x0000000003801d90        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d90                vex::PORT19
+                0x0000000003801cc8        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cc8                vex::PORT19
  .rodata._ZN3vex6PORT22E
-                0x0000000003801d94        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d94                vex::PORT22
+                0x0000000003801ccc        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801ccc                vex::PORT22
  .rodata._ZN3vex9ratio18_1E
-                0x0000000003801d98        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
-                0x0000000003801d98                vex::ratio18_1
- *fill*         0x0000000003801d9c        0x4 
+                0x0000000003801cd0        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x0000000003801cd0                vex::ratio18_1
+ *fill*         0x0000000003801cd4        0x4 
  .rodata._ZTVN3vex5motorE
-                0x0000000003801da0       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003801da0                vtable for vex::motor
+                0x0000000003801cd8       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003801cd8                vtable for vex::motor
  .rodata.CSWTCH.16
-                0x0000000003801db8        0xb /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003801cf0        0xb /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
  .rodata.CSWTCH.18
-                0x0000000003801dc3        0xb /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003801cfb        0xb /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
  .rodata.CSWTCH.24
-                0x0000000003801dce        0x3 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x0000000003801d06        0x3 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
  .rodata.str1.1
-                0x0000000003801dd1       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
+                0x0000000003801d09       0x14 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
  .rodata.str1.1
-                0x0000000003801de5       0x2d /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
- *fill*         0x0000000003801e12        0x6 
+                0x0000000003801d1d       0x2d /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+ *fill*         0x0000000003801d4a        0x6 
  .rodata._ZTVN3vex7triportE
-                0x0000000003801e18       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
-                0x0000000003801e18                vtable for vex::triport
+                0x0000000003801d50       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x0000000003801d50                vtable for vex::triport
  .rodata._ZTVN3vex6deviceE
-                0x0000000003801e30       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
-                0x0000000003801e30                vtable for vex::device
+                0x0000000003801d68       0x18 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x0000000003801d68                vtable for vex::device
  .rodata.str1.4
-                0x0000000003801e48        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
+                0x0000000003801d80        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
                                           0x2 (size before relaxing)
  *(.gnu.linkonce.r.*)
-                0x0000000003801e4c                __rodata_end = .
+                0x0000000003801d84                __rodata_end = .
 
-.rodata1        0x0000000003801e4c        0x0
-                0x0000000003801e4c                __rodata1_start = .
+.rodata1        0x0000000003801d84        0x0
+                0x0000000003801d84                __rodata1_start = .
  *(.rodata1)
  *(.rodata1.*)
-                0x0000000003801e4c                __rodata1_end = .
+                0x0000000003801d84                __rodata1_end = .
 
-.sdata2         0x0000000003801e4c        0x0
-                0x0000000003801e4c                __sdata2_start = .
+.sdata2         0x0000000003801d84        0x0
+                0x0000000003801d84                __sdata2_start = .
  *(.sdata2)
  *(.sdata2.*)
  *(.gnu.linkonce.s2.*)
-                0x0000000003801e4c                __sdata2_end = .
+                0x0000000003801d84                __sdata2_end = .
 
-.sbss2          0x0000000003801e4c        0x0
-                0x0000000003801e4c                __sbss2_start = .
+.sbss2          0x0000000003801d84        0x0
+                0x0000000003801d84                __sbss2_start = .
  *(.sbss2)
  *(.sbss2.*)
  *(.gnu.linkonce.sb2.*)
-                0x0000000003801e4c                __sbss2_end = .
+                0x0000000003801d84                __sbss2_end = .
 
-.data           0x0000000003801e50      0x434
-                0x0000000003801e50                __data_start = .
+.data           0x0000000003801d88      0x434
+                0x0000000003801d88                __data_start = .
  *(.data)
  *(.data.*)
  .data.appRunning
-                0x0000000003801e50        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x0000000003801e50                appRunning
+                0x0000000003801d88        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x0000000003801d88                appRunning
  .data._ZN3vex24__default_motor_velocityE
-                0x0000000003801e54        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
-                0x0000000003801e54                vex::__default_motor_velocity
+                0x0000000003801d8c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003801d8c                vex::__default_motor_velocity
  .data.impure_data
-                0x0000000003801e58      0x428 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
+                0x0000000003801d90      0x428 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
  .data._impure_ptr
-                0x0000000003802280        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
-                0x0000000003802280                _impure_ptr
+                0x00000000038021b8        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
+                0x00000000038021b8                _impure_ptr
  *(.gnu.linkonce.d.*)
  *(.jcr)
  *(.got)
  *(.got.plt)
-                0x0000000003802284                __data_end = .
+                0x00000000038021bc                __data_end = .
 
-.igot.plt       0x0000000003802284        0x0
- .igot.plt      0x0000000003802284        0x0 build/src/HolonomicDrivetrain.o
+.igot.plt       0x00000000038021bc        0x0
+ .igot.plt      0x00000000038021bc        0x0 build/src/HolonomicDrivetrain.o
 
-.data1          0x0000000003802284        0x0
-                0x0000000003802284                __data1_start = .
+.data1          0x00000000038021bc        0x0
+                0x00000000038021bc                __data1_start = .
  *(.data1)
  *(.data1.*)
-                0x0000000003802284                __data1_end = .
+                0x00000000038021bc                __data1_end = .
 
 .got
  *(.got)
 
-.ctors          0x0000000003802284        0x0
-                0x0000000003802284                __CTOR_LIST__ = .
-                0x0000000003802284                ___CTORS_LIST___ = .
+.ctors          0x00000000038021bc        0x0
+                0x00000000038021bc                __CTOR_LIST__ = .
+                0x00000000038021bc                ___CTORS_LIST___ = .
  *crtbegin.o(.ctors)
  *(EXCLUDE_FILE(*crtend.o) .ctors)
  *(SORT_BY_NAME(.ctors.*))
  *(.ctors)
-                0x0000000003802284                __CTOR_END__ = .
-                0x0000000003802284                ___CTORS_END___ = .
+                0x00000000038021bc                __CTOR_END__ = .
+                0x00000000038021bc                ___CTORS_END___ = .
 
-.dtors          0x0000000003802284        0x0
-                0x0000000003802284                __DTOR_LIST__ = .
-                0x0000000003802284                ___DTORS_LIST___ = .
+.dtors          0x00000000038021bc        0x0
+                0x00000000038021bc                __DTOR_LIST__ = .
+                0x00000000038021bc                ___DTORS_LIST___ = .
  *crtbegin.o(.dtors)
  *(EXCLUDE_FILE(*crtend.o) .dtors)
  *(SORT_BY_NAME(.dtors.*))
  *(.dtors)
-                0x0000000003802284                __DTOR_END__ = .
-                0x0000000003802284                ___DTORS_END___ = .
+                0x00000000038021bc                __DTOR_END__ = .
+                0x00000000038021bc                ___DTORS_END___ = .
 
-.fixup          0x0000000003802284        0x0
-                0x0000000003802284                __fixup_start = .
+.fixup          0x00000000038021bc        0x0
+                0x00000000038021bc                __fixup_start = .
  *(.fixup)
-                0x0000000003802284                __fixup_end = .
+                0x00000000038021bc                __fixup_end = .
 
 .eh_frame
  *(.eh_frame)
 
-.eh_framehdr    0x0000000003802284        0x0
-                0x0000000003802284                __eh_framehdr_start = .
+.eh_framehdr    0x00000000038021bc        0x0
+                0x00000000038021bc                __eh_framehdr_start = .
  *(.eh_framehdr)
-                0x0000000003802284                __eh_framehdr_end = .
+                0x00000000038021bc                __eh_framehdr_end = .
 
 .gcc_except_table
  *(.gcc_except_table)
@@ -3140,235 +3138,235 @@ Linker script and memory map
  *(.mmu_tbl)
                 0x0000000003804000                __mmu_tbl_end = .
 
-.ARM.exidx      0x0000000003802284        0x8
-                0x0000000003802284                __exidx_start = .
+.ARM.exidx      0x00000000038021bc        0x8
+                0x00000000038021bc                __exidx_start = .
  *(.ARM.exidx*)
  .ARM.exidx.text._ZN5Radix19HolonomicDrivetrain13driverControlEv
-                0x0000000003802284        0x8 build/src/HolonomicDrivetrain.o
+                0x00000000038021bc        0x8 build/src/HolonomicDrivetrain.o
  .ARM.exidx.text.main
-                0x000000000380228c        0x0 build/src/main.o
+                0x00000000038021c4        0x0 build/src/main.o
                                           0x8 (size before relaxing)
  .ARM.exidx.text._Z11vexcodeInitv
-                0x000000000380228c        0x0 build/src/robot-config.o
+                0x00000000038021c4        0x0 build/src/robot-config.o
                                           0x8 (size before relaxing)
  .ARM.exidx.text._GLOBAL__sub_I_robot_config.cpp
-                0x000000000380228c        0x0 build/src/robot-config.o
+                0x00000000038021c4        0x0 build/src/robot-config.o
                                           0x8 (size before relaxing)
  *(.gnu.linkonce.armexidix.*.*)
-                0x000000000380228c                __exidx_end = .
+                0x00000000038021c4                __exidx_end = .
 
-.rel.dyn        0x000000000380228c        0x0
- .rel.iplt      0x000000000380228c        0x0 build/src/HolonomicDrivetrain.o
+.rel.dyn        0x00000000038021c4        0x0
+ .rel.iplt      0x00000000038021c4        0x0 build/src/HolonomicDrivetrain.o
 
-.preinit_array  0x000000000380228c        0x0
-                0x000000000380228c                __preinit_array_start = .
+.preinit_array  0x00000000038021c4        0x0
+                0x00000000038021c4                __preinit_array_start = .
  *(SORT_BY_NAME(.preinit_array.*))
  *(.preinit_array)
-                0x000000000380228c                __preinit_array_end = .
+                0x00000000038021c4                __preinit_array_end = .
 
-.init_array     0x000000000380228c        0x8
-                0x000000000380228c                __init_array_start = .
+.init_array     0x00000000038021c4        0x8
+                0x00000000038021c4                __init_array_start = .
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array)
- .init_array    0x000000000380228c        0x4 build/src/robot-config.o
- .init_array    0x0000000003802290        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x0000000003802294                __init_array_end = .
+ .init_array    0x00000000038021c4        0x4 build/src/robot-config.o
+ .init_array    0x00000000038021c8        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038021cc                __init_array_end = .
 
-.fini_array     0x0000000003802294        0x0
-                0x0000000003802294                __fini_array_start = .
+.fini_array     0x00000000038021cc        0x0
+                0x00000000038021cc                __fini_array_start = .
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array)
-                0x0000000003802294                __fini_array_end = .
+                0x00000000038021cc                __fini_array_end = .
 
 .ARM.attributes
-                0x0000000003802294       0x3a
-                0x0000000003802294                __ARM.attributes_start = .
+                0x00000000038021cc       0x3a
+                0x00000000038021cc                __ARM.attributes_start = .
  *(.ARM.attributes)
  .ARM.attributes
-                0x0000000003802294       0x3a build/src/HolonomicDrivetrain.o
+                0x00000000038021cc       0x3a build/src/HolonomicDrivetrain.o
  .ARM.attributes
-                0x00000000038022ce       0x3a build/src/main.o
+                0x0000000003802206       0x3a build/src/main.o
  .ARM.attributes
-                0x0000000003802308       0x3a build/src/robot-config.o
+                0x0000000003802240       0x3a build/src/robot-config.o
  .ARM.attributes
-                0x0000000003802342       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x000000000380227a       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
  .ARM.attributes
-                0x0000000003802377       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_util.c.obj)
+                0x00000000038022af       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_util.c.obj)
  .ARM.attributes
-                0x00000000038023ac       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
+                0x00000000038022e4       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apijump.c.obj)
  .ARM.attributes
-                0x00000000038023e1       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiversions.c.obj)
+                0x0000000003802319       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiversions.c.obj)
  .ARM.attributes
-                0x0000000003802416       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
+                0x000000000380234e       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_global.cpp.obj)
  .ARM.attributes
-                0x000000000380244b       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
+                0x0000000003802383       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_motor.cpp.obj)
  .ARM.attributes
-                0x0000000003802480       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
+                0x00000000038023b8       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_controller.cpp.obj)
  .ARM.attributes
-                0x00000000038024b5       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
+                0x00000000038023ed       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
  .ARM.attributes
-                0x00000000038024ea       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_thread.cpp.obj)
+                0x0000000003802422       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_thread.cpp.obj)
  .ARM.attributes
-                0x000000000380251f       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_event.cpp.obj)
+                0x0000000003802457       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_event.cpp.obj)
  .ARM.attributes
-                0x0000000003802554       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_mevent.cpp.obj)
+                0x000000000380248c       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_mevent.cpp.obj)
  .ARM.attributes
-                0x0000000003802589       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
+                0x00000000038024c1       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_brain.cpp.obj)
  .ARM.attributes
-                0x00000000038025be       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
+                0x00000000038024f6       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_triport.cpp.obj)
  .ARM.attributes
-                0x00000000038025f3       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x000000000380252b       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
  .ARM.attributes
-                0x0000000003802628       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
+                0x0000000003802560       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_timer.cpp.obj)
  .ARM.attributes
-                0x000000000380265d       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
+                0x0000000003802595       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_apiuser.c.obj)
  .ARM.attributes
-                0x0000000003802692       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
+                0x00000000038025ca       0x35 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_device.cpp.obj)
  .ARM.attributes
-                0x00000000038026c7       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-fini.o)
+                0x00000000038025ff       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-fini.o)
  .ARM.attributes
-                0x00000000038026f2       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
+                0x000000000380262a       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-impure.o)
  .ARM.attributes
-                0x000000000380271d       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-init.o)
+                0x0000000003802655       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libc.a(lib_a-init.o)
  .ARM.attributes
-                0x0000000003802748       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libm.a(lib_a-s_fmax.o)
-                0x0000000003802773                __ARM.attributes_end = .
+                0x0000000003802680       0x2b /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/gcc/libs/libm.a(lib_a-s_fmax.o)
+                0x00000000038026ab                __ARM.attributes_end = .
 
-.sdata          0x0000000003802294        0x0
-                0x0000000003802294                __sdata_start = .
+.sdata          0x00000000038021cc        0x0
+                0x00000000038021cc                __sdata_start = .
  *(.sdata)
  *(.sdata.*)
  *(.gnu.linkonce.s.*)
-                0x0000000003802294                __sdata_end = .
+                0x00000000038021cc                __sdata_end = .
 
-.sbss           0x0000000003802294        0x0
-                0x0000000003802294                __sbss_start = .
+.sbss           0x00000000038021cc        0x0
+                0x00000000038021cc                __sbss_start = .
  *(.sbss)
  *(.sbss.*)
  *(.gnu.linkonce.sb.*)
-                0x0000000003802294                __sbss_end = .
+                0x00000000038021cc                __sbss_end = .
 
-.tdata          0x0000000003802294        0x0
-                0x0000000003802294                __tdata_start = .
+.tdata          0x00000000038021cc        0x0
+                0x00000000038021cc                __tdata_start = .
  *(.tdata)
  *(.tdata.*)
  *(.gnu.linkonce.td.*)
-                0x0000000003802294                __tdata_end = .
+                0x00000000038021cc                __tdata_end = .
 
-.tbss           0x0000000003802294        0x0
-                0x0000000003802294                __tbss_start = .
+.tbss           0x00000000038021cc        0x0
+                0x00000000038021cc                __tbss_start = .
  *(.tbss)
  *(.tbss.*)
  *(.gnu.linkonce.tb.*)
-                0x0000000003802294                __tbss_end = .
+                0x00000000038021cc                __tbss_end = .
 
-.bss            0x0000000003802294      0x551
-                0x0000000003802294                __bss_start = .
+.bss            0x00000000038021cc      0x551
+                0x00000000038021cc                __bss_start = .
  *(.bss)
  *(.bss.*)
- .bss.Brain     0x0000000003802294      0x2bc build/src/robot-config.o
-                0x0000000003802294                Brain
+ .bss.Brain     0x00000000038021cc      0x2bc build/src/robot-config.o
+                0x00000000038021cc                Brain
  .bss.Controller1
-                0x0000000003802550      0x1ac build/src/robot-config.o
-                0x0000000003802550                Controller1
- .bss.drive_FL  0x00000000038026fc       0x24 build/src/robot-config.o
-                0x00000000038026fc                drive_FL
- .bss.drive_FR  0x0000000003802720       0x24 build/src/robot-config.o
-                0x0000000003802720                drive_FR
- .bss.drive_BL  0x0000000003802744       0x24 build/src/robot-config.o
-                0x0000000003802744                drive_BL
- .bss.drive_BR  0x0000000003802768       0x24 build/src/robot-config.o
-                0x0000000003802768                drive_BR
+                0x0000000003802488      0x1ac build/src/robot-config.o
+                0x0000000003802488                Controller1
+ .bss.drive_FL  0x0000000003802634       0x24 build/src/robot-config.o
+                0x0000000003802634                drive_FL
+ .bss.drive_FR  0x0000000003802658       0x24 build/src/robot-config.o
+                0x0000000003802658                drive_FR
+ .bss.drive_BL  0x000000000380267c       0x24 build/src/robot-config.o
+                0x000000000380267c                drive_BL
+ .bss.drive_BR  0x00000000038026a0       0x24 build/src/robot-config.o
+                0x00000000038026a0                drive_BR
  .bss.__dso_handle
-                0x000000000380278c        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x000000000380278c                __dso_handle
+                0x00000000038026c4        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x00000000038026c4                __dso_handle
  .bss._ZN3vex4task8_labelIdE
-                0x0000000003802790        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
-                0x0000000003802790                vex::task::_labelId
+                0x00000000038026c8        0x4 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_task.cpp.obj)
+                0x00000000038026c8                vex::task::_labelId
  .bss._ZN3vex5color6orangeE
-                0x0000000003802794        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x0000000003802794                vex::color::orange
+                0x00000000038026cc        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026cc                vex::color::orange
  .bss._ZN3vex5color5blackE
-                0x000000000380279c        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x000000000380279c                vex::color::black
+                0x00000000038026d4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026d4                vex::color::black
  .bss._ZN3vex5color6yellowE
-                0x00000000038027a4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027a4                vex::color::yellow
+                0x00000000038026dc        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026dc                vex::color::yellow
  .bss._ZN3vex5color5greenE
-                0x00000000038027ac        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027ac                vex::color::green
+                0x00000000038026e4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026e4                vex::color::green
  .bss._ZN3vex5color6purpleE
-                0x00000000038027b4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027b4                vex::color::purple
+                0x00000000038026ec        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026ec                vex::color::purple
  .bss._ZN3vex5color4cyanE
-                0x00000000038027bc        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027bc                vex::color::cyan
+                0x00000000038026f4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026f4                vex::color::cyan
  .bss._ZN3vex5color4blueE
-                0x00000000038027c4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027c4                vex::color::blue
+                0x00000000038026fc        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x00000000038026fc                vex::color::blue
  .bss._ZN3vex5color3redE
-                0x00000000038027cc        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027cc                vex::color::red
+                0x0000000003802704        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x0000000003802704                vex::color::red
  .bss._ZN3vex5color11transparentE
-                0x00000000038027d4        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027d4                vex::color::transparent
+                0x000000000380270c        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x000000000380270c                vex::color::transparent
  .bss._ZN3vex5color5whiteE
-                0x00000000038027dc        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
-                0x00000000038027dc                vex::color::white
+                0x0000000003802714        0x8 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(vex_color.cpp.obj)
+                0x0000000003802714                vex::color::white
  *(.gnu.linkonce.b.*)
  *(COMMON)
- COMMON         0x00000000038027e4        0x1 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
-                0x00000000038027e4                __vex_critical_section
-                0x00000000038027e5                __bss_end = .
-                0x0000000003802294                _SDA_BASE_ = (__sdata_start + ((__sbss_end - __sdata_start) / 0x2))
-                0x0000000003801e4c                _SDA2_BASE_ = (__sdata2_start + ((__sbss2_end - __sdata2_start) / 0x2))
+ COMMON         0x000000000380271c        0x1 /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/libv5rt.a(v5_startup.c.obj)
+                0x000000000380271c                __vex_critical_section
+                0x000000000380271d                __bss_end = .
+                0x00000000038021cc                _SDA_BASE_ = (__sdata_start + ((__sbss_end - __sdata_start) / 0x2))
+                0x0000000003801d84                _SDA2_BASE_ = (__sdata2_start + ((__sbss2_end - __sdata2_start) / 0x2))
 
-.heap           0x00000000038027e5   0x10000b
-                0x00000000038027f0                . = ALIGN (0x10)
- *fill*         0x00000000038027e5        0xb 
-                0x00000000038027f0                _heap = .
-                0x00000000038027f0                HeapBase = .
-                0x00000000038027f0                _heap_start = .
-                0x00000000039027f0                . = (. + _HEAP_SIZE)
- *fill*         0x00000000038027f0   0x100000 
-                0x00000000039027f0                _heap_end = .
-                0x00000000039027f0                HeapLimit = .
+.heap           0x000000000380271d   0x100003
+                0x0000000003802720                . = ALIGN (0x10)
+ *fill*         0x000000000380271d        0x3 
+                0x0000000003802720                _heap = .
+                0x0000000003802720                HeapBase = .
+                0x0000000003802720                _heap_start = .
+                0x0000000003902720                . = (. + _HEAP_SIZE)
+ *fill*         0x0000000003802720   0x100000 
+                0x0000000003902720                _heap_end = .
+                0x0000000003902720                HeapLimit = .
 
-.stack          0x00000000039027f0     0x3800
-                0x00000000039027f0                . = ALIGN (0x10)
-                0x00000000039027f0                _stack_end = .
-                0x00000000039047f0                . = (. + _STACK_SIZE)
- *fill*         0x00000000039027f0     0x2000 
-                0x00000000039047f0                . = ALIGN (0x10)
-                0x00000000039047f0                _stack = .
-                0x00000000039047f0                __stack = _stack
-                0x00000000039047f0                . = ALIGN (0x10)
-                0x00000000039047f0                _irq_stack_end = .
-                0x0000000003904bf0                . = (. + _IRQ_STACK_SIZE)
- *fill*         0x00000000039047f0      0x400 
-                0x0000000003904bf0                . = ALIGN (0x10)
-                0x0000000003904bf0                __irq_stack = .
-                0x0000000003904bf0                _supervisor_stack_end = .
-                0x00000000039053f0                . = (. + _SUPERVISOR_STACK_SIZE)
- *fill*         0x0000000003904bf0      0x800 
-                0x00000000039053f0                . = ALIGN (0x10)
-                0x00000000039053f0                __supervisor_stack = .
-                0x00000000039053f0                _abort_stack_end = .
-                0x00000000039057f0                . = (. + _ABORT_STACK_SIZE)
- *fill*         0x00000000039053f0      0x400 
-                0x00000000039057f0                . = ALIGN (0x10)
-                0x00000000039057f0                __abort_stack = .
-                0x00000000039057f0                _fiq_stack_end = .
-                0x0000000003905bf0                . = (. + _FIQ_STACK_SIZE)
- *fill*         0x00000000039057f0      0x400 
-                0x0000000003905bf0                . = ALIGN (0x10)
-                0x0000000003905bf0                __fiq_stack = .
-                0x0000000003905bf0                _undef_stack_end = .
-                0x0000000003905ff0                . = (. + _UNDEF_STACK_SIZE)
- *fill*         0x0000000003905bf0      0x400 
-                0x0000000003905ff0                . = ALIGN (0x10)
-                0x0000000003905ff0                __undef_stack = .
-                0x0000000003905ff0                _end = .
+.stack          0x0000000003902720     0x3800
+                0x0000000003902720                . = ALIGN (0x10)
+                0x0000000003902720                _stack_end = .
+                0x0000000003904720                . = (. + _STACK_SIZE)
+ *fill*         0x0000000003902720     0x2000 
+                0x0000000003904720                . = ALIGN (0x10)
+                0x0000000003904720                _stack = .
+                0x0000000003904720                __stack = _stack
+                0x0000000003904720                . = ALIGN (0x10)
+                0x0000000003904720                _irq_stack_end = .
+                0x0000000003904b20                . = (. + _IRQ_STACK_SIZE)
+ *fill*         0x0000000003904720      0x400 
+                0x0000000003904b20                . = ALIGN (0x10)
+                0x0000000003904b20                __irq_stack = .
+                0x0000000003904b20                _supervisor_stack_end = .
+                0x0000000003905320                . = (. + _SUPERVISOR_STACK_SIZE)
+ *fill*         0x0000000003904b20      0x800 
+                0x0000000003905320                . = ALIGN (0x10)
+                0x0000000003905320                __supervisor_stack = .
+                0x0000000003905320                _abort_stack_end = .
+                0x0000000003905720                . = (. + _ABORT_STACK_SIZE)
+ *fill*         0x0000000003905320      0x400 
+                0x0000000003905720                . = ALIGN (0x10)
+                0x0000000003905720                __abort_stack = .
+                0x0000000003905720                _fiq_stack_end = .
+                0x0000000003905b20                . = (. + _FIQ_STACK_SIZE)
+ *fill*         0x0000000003905720      0x400 
+                0x0000000003905b20                . = ALIGN (0x10)
+                0x0000000003905b20                __fiq_stack = .
+                0x0000000003905b20                _undef_stack_end = .
+                0x0000000003905f20                . = (. + _UNDEF_STACK_SIZE)
+ *fill*         0x0000000003905b20      0x400 
+                0x0000000003905f20                . = ALIGN (0x10)
+                0x0000000003905f20                __undef_stack = .
+                0x0000000003905f20                _end = .
 LOAD /Applications/VEXcode Pro V5.app/Contents/Resources/sdk/vexv5/stdlib_0.lib
 LOAD build/src/ControllerLayer.o
 LOAD build/src/HolonomicDrivetrain.o

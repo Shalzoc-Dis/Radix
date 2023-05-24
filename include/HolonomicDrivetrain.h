@@ -28,7 +28,7 @@ namespace Radix { namespace HolonomicDrivetrain {
   // Global variables
   // FIXME - There are issues when defining variables here
   // FIXED? - Used static
-  static int updateTick = 50;
+  static int updateTick = 100;
   static vex::brakeType stoppingMode = vex::brakeType::hold;
 
   //    Front

@@ -15,7 +15,7 @@ int HolonomicDrivetrain::driverControl() {
     // Same as translate buffer, but for turns
     int turnBuffer = 1;
     // This is the power, or speed, the robot should drive at.
-    float power = sqrt(xDist * xDist + yDist * yDist);
+    double power = sqrt(xDist * xDist + yDist * yDist);
     
     float angle = 0;  // Radians, from 0 to PI going over the top, and 0 to -PI going around the bottom
     bool shouldTranslate;
@@ -27,48 +27,62 @@ int HolonomicDrivetrain::driverControl() {
       angle = atan2(yDist, xDist);
     }
 
+    DEBUG_ONLY(printf("Angle %f\n\n", angle))
+    DEBUG_ONLY(this_thread::sleep_for(10))
+
     // Some short hand
     #ifdef RX_MECANUM // For a Mecanum drive
-      float sine = sin(angle - M_PI / 4);
-      float cosine = cos(angle - M_PI / 4);
+      double sine = sin(angle - M_PI / 4);
+      double cosine = cos(angle - M_PI / 4);
     #elif RX_XDRIVE // For an Xdrive
       float sine = sin(angle);
       float cosine = cos(angle);
     #endif
 
+    DEBUG_ONLY(printf("\nsine: %f cosine: %f\n\n", sine, cosine))
+    DEBUG_ONLY(this_thread::sleep_for(15))
+
     // Change the amount to turn based on the buffer
+    //  FIXME the robot is not turning
     if(fabs(turn) < turnBuffer)
       turn = 0;
 
     // Calculate the largest thing this evaluates to
-    float maxPower = fmax(fabs(sine), fabs(cosine));
+    double maxPower = fmax(fabs(sine), fabs(cosine));
     // Variables for the velocities of the individual motors
-    float vFL, vFR, vBL, vBR;
+    double vFL, vFR, vBL, vBR;
 
     // Calculate the required velocity of the motors
-    vFL = power * cosine / (maxPower /* + turn*/);
-    vFR = power * sine   / (maxPower /* - turn*/);
-    vBL = power * sine   / (maxPower /* + turn*/);
-    vBR = power * cosine / (maxPower /* - turn*/);
+    vFL = power * cosine / (maxPower + turn);
+    vFR = power * sine   / (maxPower - turn);
+    vBL = power * sine   / (maxPower + turn);
+    vBR = power * cosine / (maxPower - turn);
 
     // Normalise the power such that does not exceed the motors' capabilities
     // FIXME - Suspicion that the 11A max for the motors is exceeded anyway. The 100 seems arbitrary
-    if (power/* + fabs(turn)*/ > 100) {
-      vFL /= power /*+ turn*/;
-      vFR /= power /*+ turn*/;
-      vBL /= power /*+ turn*/;
-      vBR /= power /*+ turn*/;
+    // THIS CODE IS EVIL. IT WSA USELESS AND CAUSED THE MOTORS TO LOCK UP WHEN APPROACHING MAX SPEED. COST ME DAYS (at least when purely translating)
+    if (power + fabs(turn) > 100) {
+      vFL /= power + turn;
+      vFR /= power + turn;
+      vBL /= power + turn;
+      vBR /= power + turn;
+      DEBUG_ONLY(printf("\n--Normalised--\n\n"))
+      // FIXME This normalises to very low values, not the right ones
     }
 
     //printf("Angle: %f W1: %f  W2: %f  W3: %f  W4: %f\n", angle, vFL, vFR, vBL, vBR);
     //printf("Angle: %f\nxDist: %f\nyDist: %f\npower: %f\n", angle, xDist, yDist, power);
 
-    drive_FL.setVelocity(vFL, vex::velocityUnits::pct);
-    drive_FR.setVelocity(vFR, vex::velocityUnits::pct);
-    drive_BL.setVelocity(vBL, vex::velocityUnits::pct);
-    drive_BR.setVelocity(vBR, vex::velocityUnits::pct);
+    DEBUG_ONLY(printf("\nshouldTranslate %i\n\n", shouldTranslate))
+    DEBUG_ONLY(printf("actVelFLpct %f | simVelFLpct %f\nactVelFRpct %f | simVelFRpct %f\nactVelBLpct %f | simVelBLpct %f\nactVelBRpct %f | simVelBRpct %f\n\n-----------\n", drive_FL.velocity(pct), vFL, drive_FR.velocity(pct), vFR, drive_BL.velocity(pct), vBL, drive_BR.velocity(pct), vBR))
+
     
     if (shouldTranslate) {
+      drive_FL.setVelocity(vFL, vex::velocityUnits::pct);
+      drive_FR.setVelocity(vFR, vex::velocityUnits::pct);
+      drive_BL.setVelocity(vBL, vex::velocityUnits::pct);
+      drive_BR.setVelocity(vBR, vex::velocityUnits::pct);
+
       drive_FL.spin(vex::forward);
       drive_FR.spin(vex::forward);
       drive_BL.spin(vex::forward);
@@ -80,11 +94,7 @@ int HolonomicDrivetrain::driverControl() {
       drive_BR.stop();
     }
 
-    printf("FL %f | vFLpct %f\nFR %f | vFRpct %f\nBL %f | vBLpct %f\nBR %f | vBRpct %f\n-----------\n", drive_FL.velocity(pct), vFL, drive_FR.velocity(pct), vFR, drive_BL.velocity(pct), vBL, drive_BR.velocity(pct), vBR);
-    //printf("sine %f\n cosine %f\n------------\n", sine, cosine);
-
-    //wait(HolonomicDrivetrain::updateTick, msec);
-    this_thread::sleep_for(HolonomicDrivetrain::updateTick);
+    this_thread::sleep_for(/*HolonomicDrivetrain::updateTick*/100);
   }
 
   
